@@ -60,7 +60,6 @@ const App = () => {
       );
 
       setOrder(incomingOrder);
-
       refreshCart();
     } catch (error) {
       setErrorMessage(error.data.error.message);
@@ -111,7 +110,14 @@ const App = () => {
           <Route
             exact
             path="/checkout"
-            element={<Checkout cart={cart} />}
+            element={
+              <Checkout
+                cart={cart}
+                order={order}
+                onCaptureCheckout={handleCaptureCheckout}
+                error={errorMessage}
+              />
+            }
           ></Route>
         </Routes>
       </div>
