@@ -18,8 +18,8 @@ const PaymentForm = ({
   shippingData,
   onCaptureCheckout,
 }) => {
-  const handleSubmit = async (e, elements, stripe) => {
-    e.preventDefault();
+  const handleSubmit = async (event, elements, stripe) => {
+    event.preventDefault();
 
     if (!stripe || !elements) return;
 
